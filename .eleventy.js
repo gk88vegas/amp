@@ -54,10 +54,12 @@ module.exports = function(eleventyConfig) {
       }
     ];
     
-    // Use slug to deterministically pick a color (same slug = same color)
+    // Random color each build using timestamp + slug
+    const buildTime = Date.now();
+    const seed = slug + buildTime.toString();
     let hash = 0;
-    for (let i = 0; i < slug.length; i++) {
-      hash = ((hash << 5) - hash) + slug.charCodeAt(i);
+    for (let i = 0; i < seed.length; i++) {
+      hash = ((hash << 5) - hash) + seed.charCodeAt(i);
       hash = hash & hash;
     }
     const index = Math.abs(hash) % colorSchemes.length;
