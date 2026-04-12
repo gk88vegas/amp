@@ -287,7 +287,7 @@ permalink: "{{ p.brand }}/{{ p.slug }}/"
       z-index: 999;
       display: flex;
       justify-content: center;
-      align-items: center;
+      align-items: stretch;
       gap: 10px;
       box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.3);
       transform: translate3d(0, 0, 0);
@@ -295,14 +295,16 @@ permalink: "{{ p.brand }}/{{ p.slug }}/"
     }
     
     .footer-button {
-      display: inline-block;
-      padding: 14px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 20px;
       font-size: 15px;
       font-weight: bold;
       text-decoration: none;
       color: #ffffff;
       background: linear-gradient(135deg, {{ colors.secondary }} 0%, {{ colors.primary }} 100%);
-      border-radius: 50px;
+      border-radius: 12px;
       border: none;
       border-bottom: 4px solid #CC8800;
       box-shadow: 
@@ -311,8 +313,9 @@ permalink: "{{ p.brand }}/{{ p.slug }}/"
       text-transform: uppercase;
       letter-spacing: 1px;
       flex: 1;
-      max-width: 200px;
+      max-width: 180px;
       text-align: center;
+      white-space: nowrap;
     }
   </style>
   
@@ -468,7 +471,7 @@ permalink: "{{ p.brand }}/{{ p.slug }}/"
   </section>
   <div class="sticky-footer">
     <a href="{{ p.cta_link }}" class="footer-button">
-      🎁 NHẬN 58K MIỄN PHÍ
+      🎁 NHẬN 58K
     </a>
     <a href="{{ p.cta_link }}" class="footer-button">
       💰 X2 NẠP ĐẦU
