@@ -381,7 +381,7 @@ permalink: "{{ p.brand }}/{{ p.slug }}/"
 <body>
   <amp-auto-ads type="adsense" data-ad-client="ca-pub-1495841003681168"></amp-auto-ads>
   <header>
-    <img src="/images/100vip-logo.webp" 
+    <img src="{{ p.logo if p.logo else '/images/100vip-logo.webp' }}" 
          width="150" 
          height="auto" 
          alt="Logo" 
